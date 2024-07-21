@@ -1,0 +1,56 @@
+
+
+For one week try to use the terminal to do absolutely everything in your system including changing wifi 
+networks. You dont have to do it to open .desktop files (if you don't know what those are or where they are 
+figure it out). (3)
+
+
+
+*Install Arch on a VM (5)
+https://wiki.archlinux.org/title/Installation_guide 
+
+
+
+Make a bash script automating all the tasks in this guide that runs periodically (the suggested frequencies 
+in the link). 
+Set this script to run as a background process every time your system boots and have it check for the amount of 
+time passed since the last update for each activity. Upload the final project to github and send it to me. (4)
+https://forum.endeavouros.com/t/a-complete-idiots-guide-to-endeavour-os-maintenance-update-upgrade/25184
+
+
+On EndeavourOS (use timeshift to save your system before attempting) install a different desktop environment 
+and switch to it. Gnome or XFCE or Cinammon (2)
+https://wiki.archlinux.org/title/Desktop_environment 
+
+Install and run a window manager like Hyprland, AwesomeWM, I3, sway. Follow whatever guide there is to setting
+ it up and configuring it online. (4)
+https://wiki.archlinux.org/title/Window_manager 
+
+
+Write me a report inside your terminal as a markdown file listing each directory in YOUR root (/) and tell me 
+what each folder contains and why it's named the way it is. (3)
+https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
+https://youtu.be/42iQKuQodW4?si=tQgvDKnOoG6nn2Id
+https://youtu.be/P0QZnAnsQ4c?si=nZmk3pAaj3Ehu4KP
+https://www.markdownguide.org/
+
+
+To summarize, this is a four-part process:
+
+Create a Markdown file using a text editor or a dedicated Markdown application. The file should have an .md 
+or .markdown extension.
+Open the Markdown file in a Markdown application.
+Use the Markdown application to convert the Markdown file to an HTML document.
+View the HTML file in a web browser or use the Markdown application to convert it to another file format,
+ like PDF.
+
+
+++Download the repo and build this AUR package from source. Use of yay is not allowed but if you can install 
+another AUR Helper I will give you partial credit. (3)
+https://aur.archlinux.org/packages/octopiO
+
+# makepkg -f
+
++++Pick out applications that you like from this list and replace your current loadout of applications with ones
+ you like better. Feel free to test them. Change out at least 4 applications. (1)
+https://wiki.archlinux.org/title/List_of_applications 
