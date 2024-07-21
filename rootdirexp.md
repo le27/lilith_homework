@@ -46,101 +46,159 @@ for all x in kobayashi:
 # Folder list
  
 ## bin
-bin=binary, contains executables, can always be seen my terminal.
-e.g ls, rm, sudo, unzip 
-seemingly not cd
+bin=binary  
+This folder contains executables, and it's contents can always be seen in the terminal.
+
+Most of the common terminal commands can be found here such as ls, rm, sudo, unzip, etc  
+
+cd does not appear here. [This](https://unix.stackexchange.com/questions/59171/why-is-cd-not-a-file-in-bin#:~:text=cd%20is%20a%20shell%20builtin,itself%2C%20not%20a%20separate%20executable.) stack exchange post seems to explain why but luna doesn't really understand it right now. Maybe lilith can explain it to her.
+
+The "which" command can be use to find binary paths.
+For example "which ls" returns "/usr/bin/ls" and interesting "which cd" returns "no cd in (/usr/local/sbin:"..."bin)"
 
 
 ## sbin
 sbin=system binary.
-same as above but contents can only be used by root user (contains some duplicates from above 
-(probably for when some functions require root and some don't))
-e.g mount, git, rm, rmdir
+
+This is the same as "bin" but the contents can only be used by the root user. It contains some duplicates from "bin"
+(luna conjectures that this is for when some features require root and some don't).
+
+Some examples include mount, git, rm, and rmdir.
 
 ## lib
-lib=libraries
-is called from both bin and sbin
+lib=libraries  
+
+This contains libraries required by things in other directories (specifically bin and sbin). Having them here instead of with the other files has the advantage that the same data can be called from multiple places so less duplication is needed.
+
+Some example subdirectories include: vlc, wine, vesptop, ssh, steam.
 
 ## lib64
 lib64=libraries64bit
-this is self explanatory
+
+This directory serves essentially the same purpose as "lib" but is indended specifically for systems with 64-bit processors.
 
 ## usr
 usr=user
-contains usr targeted bin, sbin, and lib directories with same function as above.
-Also contains a local directory with its own bin directory so there is no interference between manually installed
-packages and those installed with a package manager
+
+This contains its own bin, sbin, and lib directories with the same purpose as described above. These are indended to be accessed by the user more so than the other copies with the same name.  
+This also makes it easier to reduce interference between manually installed
+packages and those installed with a package manager.
 
 ## etc
 etc=editable text config
-stores most config files so they can be easily edited to customise your software
+
+This is where most config files are stored so they can be easily locaded and edited to customise software.
+ 
+Although notably luna's hyperland configs are here: "~/.config/hypr"
 
 
 ## home
-sometimes denoted by a tilda
-folder for each user. you have only one folder called "luna". Contains stuff specific to user. can only be accesed
-by that user or someone more powerful (e.g root)
+Also sometimes denoted by a ~
+
+This contains a folder for each user. Thus luna's home directory contains only one folder called "luna". These directories contain this specific to each user. It can only be accesed by that user or someone more powerful (e.g root).
+
+The folders "Documents", "Downloads", "Videos", and similar for each user are in these folders here.
 
 
 ## boot
-contains linux kernel and things needed to boot system
+This folder alledgedly contains the linux kernel and things needed to boot the system.  
+
+Luna's boot folder contains   
+"efi", "initramfs-linux-fallback.img", "intel-ucode.img", "grub", "initramfs-linux.img", and "vmlinuz-linux"
+
+Luna doesn't understand what any of these are, but luna doesn't think she'll want to ever interact with this folder until she has a much higher power level.
 
 ## dev
 dev=device files
-for hardware and drivers
+
+This folder is for hardware and drivers.   
+
+Some example contents are the "cpu" folder, the "core" folder, various "loop" files, and many more.
+
+Luna doesn't understand what any of these are, but luna doesn't think she'll want to ever interact with this folder until she has a much higher power level.
+
 
 ## opt
 opt=optional
-for addons
+
+This directory is for software addons. Luna's "opt" directory contains the folders "beeper", "google", "pokemon-colorscripts", and "zoom". The pokemon one is presumably for the pokemon art which appear in the terminal.
 
 ## var
 var=variable
-logs and cache
+
+This is for logs and cache files. some example folders include "empty", "cache", "games", "log", "run", and many others.  
+
+Luna doesn't understand this well, but luna doesn't think she'll want to ever interact with this folder until she has a much higher power level.
+
 
 ## tmp
 tmp=temporary
-removed between reboots
+
+This is for files which are intended to be removed between reboots.
+
+Some example subdirectories include "ystemd-private-5b4458d9a779443aafd200183303d4fa-bluetooth.service-79fd0n", "snap-private-tmp", ".font-unix" and many more.
+
+Luna doesn't understand what any of these are, but luna doesn't think she'll want to ever interact with this folder until she has a much higher power level.
+
 
 ## lost+found
-cannot access
-broken stuff is put here when there is a crash etc.
+Luna seemingly cannot access this directory. Maybe lilith can show her how.
+
+Apparently broken stuff is put here when there is a crash etc.
 
 ## mnt
 mnt=mount
-where you mount stuff
+
+This is often (not necessarily) where things are mounted.
+
+Luna's "mnt" directory is empty.
 
 ## proc
 proc=process
-psudofile system which contains info about all active processes 
+
+According to google: "The /proc directory is NOT a real file system but a virtual file system that is created dynamically by Linux to provide access to certain types of hardware information and information about the running processes. It is mapped to /proc and mounted at boot time.
+psudofile system which contains info about all active processes." Luna only vaguely understands this.
+
+Luna's "proc" directory contains folders named for integers between 1 and 31956 (with many missing but including most of the first 100). It also contains a few itger files for example "consoles", "devices", and "keys".
+
+Luna doesn't understand what any of these are, but luna doesn't think she'll want to ever interact with this folder until she has a much higher power level.
 
 ## root
-cannor access
-home directory for root user
+Luna cannot access this directory. 
+
+Apparently this is the home directory for root user. Luna doesn't understand this, is it diffent from the "/" directory?
 
 ## run
-contains info on what has run since boot
+This directory contains info on what has run since boot.
+
+Luna's "run" directory contains folders named "avahi-daemon", "mount", "sudo", "user", "log", and many others.
+
+Luna doesn't understand what any of these are, but luna doesn't think she'll want to ever interact with this folder until she has a much higher power level.
 
 
 ## snap
-contains files related to snap packages
+Contains files related to snap packages.  
+
+Luna's "snap" directory contains folders named "remarkable-desktop", "snapd", "wine-platform-6-stable", "bin", and many others.
+
 
 ## srv
 srv=server
-not used much
-for files served by webserver
+
+Allegedly this is not used much but is for files served by webserver.
+
+Luna's "srv" directory contains only the directories "ftp" and "http".
 
 ## sys
 sys=system
-info on devices, drivers, and "kernel features"
-similar to proc
+
+This folder contains info on devices, drivers, and "kernel features". It seems similar to "proc".
+
+Luna's "sys" directory contains folders named "block", "class", "devices", "fs", and many others.
+
+Luna doesn't understand what any of these are, but luna doesn't think she'll want to ever interact with this folder until she has a much higher power level.
 
 
-a~a~
 
 
 
-
-
-"which" command finds binary path.
-for example "which ls" returns "/usr/bin/ls"
-interesting "which cd" returns "no cd in (/usr/local/sbin:"..."bin)"
